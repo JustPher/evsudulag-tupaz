@@ -1,11 +1,12 @@
 <div class="login-container">
     <mat-card>
       <mat-card-title>Login</mat-card-title>
+      <p class="error" *ngIf="loginError">{{loginError}}</p>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Username</mat-label>
-          <input matInput formControlName="email" type="email" required>
-          <mat-error *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+          <input matInput formControlName="username" type="email" required>
+          <mat-error *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
             Please enter a valid email.
           </mat-error>
         </mat-form-field>
